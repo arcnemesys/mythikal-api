@@ -11,11 +11,8 @@ base_prompt = "Given what you know about me, my strengths and weaknesses, goals,
 
 app = FastAPI()
 app.include_router(auth_router)
-@app.on_event("startup")
-def on_startup():
-    SQLModel.metadata.create_all(engine)
 @app.get("/")
-def read_root():
+async def read_root():
     return {"Hello": "World"}
 
 @app.get("/items/{item_id}")
