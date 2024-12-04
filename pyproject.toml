@@ -1,0 +1,14 @@
+[project]
+name = "mythikal-api"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi[standard]>=0.115.5",
+    "sqlmodel>=0.0.22",
+    "uuid>=1.30",
+    "uvicorn",
+    "psycopg2-binary",
+    "passlib[bcrypt]",
+]
