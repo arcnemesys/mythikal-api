@@ -4,6 +4,7 @@ from .auth import router as auth_router
 from db import engine 
 from sqlmodel import SQLModel
 from dotenv import load_dotenv
+import uvicorn 
 
 load_dotenv()
 base_prompt = "Given what you know about me, my strengths and weaknesses, goals, fears, desires, accomplishments, hobbies, past, present, vices and virtues, can you generate a profile of me as an anime character, i.e powers, stats, abilities, biography, personality, fashion sense, etc? Feel free to draw on all categories of anime to do so, and, while remaining true to what you know about me, take creative liberty as you wish!"
@@ -21,3 +22,6 @@ def read_item(item_id: int, q: Union[str, None]= None):
 def main():
     print("Hello from mythikal-api!")
       
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
