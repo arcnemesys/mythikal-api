@@ -13,5 +13,11 @@ dependencies = [
     "asyncpg==0.27.0",
     "passlib[bcrypt]==1.7.4",
     "python-dotenv==1.0.0",
-    "psycopg2-binary==2.9.6"
+    "psycopg2-binary"
 ]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["api"]
