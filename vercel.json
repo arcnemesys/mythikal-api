@@ -12,8 +12,5 @@
       "dest": "api/index.py"
     }
   ],
-  "env": {
-    "DATABASE_URL": "postgres://neondb_owner:59yGlPeWMYoV@ep-long-heart-a5p1t0ws-pooler.us-east-2.aws.neon.tech/neondb?sslmode=require"
-  }
 }
 
