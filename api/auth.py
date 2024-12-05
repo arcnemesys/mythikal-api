@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException, Depends
 from sqlmodel import Session, select
 from pydantic import BaseModel 
 from . db import get_session 
-from user import User 
+from . user import User 
 
 router = APIRouter()
 
@@ -43,3 +43,7 @@ async def login(login_data: LoginRequest, session: Session = Depends(get_session
         raise HTTPException(status_code=401, detail="Invalid credentials")
     # TODO: Refactor to return a token 
     return {"message"}
+
+@router.get("/")
+async def read_root():
+    return {"Hello": "World"}
